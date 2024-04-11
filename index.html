@@ -1,0 +1,215 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>half-life scripts</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+	<main>
+		<h1>half-life scripts</h1>
+
+		<h2>bhop script</h2>
+				<video width="320" height="240" controls>
+<source src="half-life_02 - Kelly Bailey - Vague Voices (Black Mesa Inbound).mp3" type="video/mp4">
+</video>
+		<p>	!Скрипт, который позволяет быстро и без потери скорости совершать Bunnyhop, выполняя команды +jump через каждый второй кадр.
+
+		Важно знать, что этот скрипт обеспечивает плавное прыжки кроликом только при определенных значениях fps_max, потому что при некоторых частотах кадров время, которое игрок проводит в воздухе, может привести к тому, что игрок приземлится на землю, пока скрипт выполняет -прыжок. Дополнительную информацию по этой теме можно найти на странице «Эффекты FPS».!</p>
+		<p>alias bh1 "+jump;alias bh@ bh2;special"
+		alias bh2 "wait;alias bh@ bh3;special"
+		alias bh3 "-jump;alias bh@ bh4;special"
+		alias bh4 "wait;alias bh@ bh1;special"
+		alias +bhop "alias _special bh@;bh1"
+		alias -bhop "alias _special;-jump"
+		bind SPACE +bhop</p>
+
+				<h2>Duckroll script</h2>
+		<p>!Скрипт, который делает непрерывные двойные прыжки (небольшие псевдопрыжки, которые поднимают вас в воздухе примерно на 32 единицы) чрезвычайно быстро. В основном он используется для контроля скорости при движении на очень высокой скорости и для поддержания скорости при движении по направлению к лестнице. Его также можно использовать для поддержания скорости при игре в версию Half-Life, в которой скорость Bunnyhopping ограничена из-за того, что ограничитель скорости Bunnyhop вообще не обнаруживает даблдаки. См. duck!</p>
+	<p>alias +duckroll "alias _special duckroll;duckroll"
+	alias -duckroll "alias _special"
+	alias duckroll "+duck;wait;-duck;wait;special"</p>
+		
+				<h2>Double-Duck script</h2>
+										<video width="320" height="240" controls>
+<source src="de_nuke - Drop Double duck.mp4" type="video/mp4">
+</video>					
+		<p>Простой сценарий, который выполняет двойное приседание, лучше всего работает при выполнении техники «Счет-прыжок» или при быстром подъеме по ящикам.
+
+	Используйте bind <key> +dd</p>
+		<p>alias +dd "-duck;wait;+duck;wait;-duck;wait;+duck"
+	alias -dd -duck</p>
+
+				<h2>Jumpbug script</h2>
+										<video width="320" height="240" controls>
+<source src="JumpBug in Half-Life 1.mp4" type="video/mp4">
+</video>	
+		<p>Это поможет вам при попытке выполнить Jumpbug. Просто удерживайте клавишу, чтобы присесть, и отпустите ее, чтобы мгновенно присесть и прыгнуть.
+	Помните, что это не облегчает выполнение jumpbug. Это всего лишь привязка, которая поможет вам.
+
+	Используйте bind <key> + jumpbug</p>
+		<p>alias _jumpbug
+	alias _jumpbugfunc "-duck;+jump;w5;-jump"
+	alias +jumpbug "+duck; alias _jumpbug _jumpbugfunc"
+	alias -jumpbug "_jumpbug; alias _jumpbug"</p>
+
+				<h2>Usespam script</h2>
+										<video width="320" height="240" controls>
+<source src="UseSpam Exploit.mp4" type="video/mp4">
+</video>	
+		<p>Сценарий, который очень быстро спамит команду +use. Обычно он используется для быстрого нажатия кнопок, но при определенной технике его можно использовать для создания псевдо-объектов, которые уносят с собой объект, которым вы манипулируете.
+
+	Используйте bind <ключ> +usespam</p>
+		<p>alias +usespam "alias _special usespam;usespam"
+	alias -usespam "alias _special"
+	alias usespam "+use;wait;-use;wait;special"</p>
+				<h2>Quick-Use script</h2>
+	<p>Простой скрипт, выполняющий +use в один кадр, не замедляющий вашу скорость, идеально подходящий для нажатия кнопок, когда вы прыгаете рядом с ними.
+
+	Используйте bind <key> quse</p>
+		<p>alias quse "-use;wait;+use;wait;-use"</p>
+		<h2>Gauss Boost script</h2>
+						<video width="320" height="240" controls>
+<source src="gauss boost and fps trick.mp4" type="video/mp4">
+</video>
+		<p>Скрипт Gauss-jumping для мультиплеера. Основное отличие состоит в том, что он подталкивает вас в направлении, к которому вы стремитесь, чтобы воспользоваться тем фактом, что вы способны повышать Гаусса по вертикали.
+
+	Используйте bind <key> +tau</p>
+		<p>alias _taubo
+	alias _taubofunc "cl_pitchup 180;cl_pitchdown -180;-attack2;wait;cl_pitchup -12;cl_pitchdown 12;wait;cl_pitchup 89.999;cl_pitchdown 89.999"
+	alias +tau "+attack2; alias _taubo _taubofunc"
+	alias -tau "_taubo; alias _taubo"</p>
+				<h2>Object Boosting script</h2>
+										<video width="320" height="240" controls>
+<source src="half life object boost.mp4" type="video/mp4">
+</video>
+	<p>В сценариях ускорения объектов число представляет скорость (в единицах в секунду), которую вы получите, если будете выполнять их со скоростью 100 кадров в секунду. Обратите внимание, что у вас могут быть разные результаты при разных значениях FPS из-за повышенного ускорения при ускорении объектов.
+
+	Используйте bind <key> obbo</p>
+		<p>alias obbo2000 "+use;w11;-use;+jump;w;-jump"
+	alias obbo1500 "+use;w10;-use;+jump;w;-jump"
+	alias obbo1300 "+use;w9;-use;+jump;w;-jump"
+	alias obbo1000 "+use;w8;-use;+jump;w;-jump"
+	alias obbo800 "+use;w7;-use;+jump;w;-jump"
+	alias obbo600 "+use;w6;-use;+jump;w;-jump"
+	alias obbo500 "+use;w5;-use;+jump;w;-jump"</p>
+				<h2>Wait Table</h2>
+	<p>Если вы используете Bunnymod XT, таблица ожидания не обязательна и может быть заменена эквивалентной командой w <номер> (обратите внимание на пробел между ними). Преимущество этого подхода заключается в возможности использовать произвольное количество ожиданий в одной команде, например w 3528, вместо того, чтобы использовать w1000;w1000;w1000;w500;w28, если бы использовалась таблица ожидания.
+
+Если вы не используете Bunnymod XT, следующая таблица ожидания может быть плохой заменой w. Эта таблица псевдонимов генерирует в общей сложности 110 псевдонимов ожидания, что отлично подходит для простого создания сложных сценариев.</p>
+	<p>//wait table
+alias	"w"			"wait"
+alias	"w1"			"wait"
+alias	"w2"			"w;w"
+alias	"w3"			"w2;w"
+alias	"w4"			"w2;w2"
+alias	"w5"			"w4;w"
+alias	"w6"			"w3;w3"
+alias	"w7"			"w6;w"
+alias	"w8"			"w4;w4"
+alias	"w9"			"w7;w2"
+alias	"w10"			"w5;w5"
+alias	"w11"			"w9;w2"
+alias	"w12"			"w6;w6"
+alias	"w13"			"w9;w4"
+alias	"w14"			"w9;w5"
+alias	"w15"			"w9;w6"
+alias	"w16"			"w9;w7"
+alias	"w17"			"w9;w8"
+alias	"w18"			"w9;w9"
+alias	"w19"			"w9;w10"
+alias	"w20"			"w9;w11"
+alias	"w21"			"w9;w12"
+alias	"w22"			"w9;w13"
+alias	"w23"			"w9;w14"
+alias	"w24"			"w9;w15"
+alias	"w25"			"w9;w16"
+alias	"w26"			"w9;w17"
+alias	"w27"			"w9;w18"
+alias	"w28"			"w9;w19"
+alias	"w29"			"w9;w20"
+alias	"w30"			"w9;w21"
+alias	"w31"			"w9;w22"
+alias	"w32"			"w9;w23"
+alias	"w33"			"w9;w24"
+alias	"w34"			"w9;w25"
+alias	"w35"			"w9;w26"
+alias	"w36"			"w9;w27"
+alias	"w37"			"w9;w28"
+alias	"w38"			"w9;w29"
+alias	"w39"			"w9;w30"
+alias	"w40"			"w9;w31"
+alias	"w41"			"w9;w32"
+alias	"w42"			"w9;w33"
+alias	"w43"			"w9;w34"
+alias	"w44"			"w9;w35"
+alias	"w45"			"w9;w36"
+alias	"w46"			"w9;w37"
+alias	"w47"			"w9;w38"
+alias	"w48"			"w9;w39"
+alias	"w49"			"w9;w40"
+alias	"w50"			"w9;w41"
+alias	"w51"			"w50;w1"
+alias	"w52"			"w50;w2"
+alias	"w53"			"w50;w3"
+alias	"w54"			"w50;w4"
+alias	"w55"			"w50;w5"
+alias	"w56"			"w50;w6"
+alias	"w57"			"w50;w7"
+alias	"w58"			"w50;w8"
+alias	"w59"			"w50;w9"
+alias	"w60"			"w50;w10"
+alias	"w61"			"w50;w11"
+alias	"w62"			"w50;w12"
+alias	"w63"			"w50;w13"
+alias	"w64"			"w50;w14"
+alias	"w65"			"w50;w15"
+alias	"w66"			"w50;w16"
+alias	"w67"			"w50;w17"
+alias	"w68"			"w50;w18"
+alias	"w69"			"w50;w19"
+alias	"w70"			"w50;w20"
+alias	"w71"			"w50;w21"
+alias	"w72"			"w50;w22"
+alias	"w73"			"w50;w23"
+alias	"w74"			"w50;w24"
+alias	"w75"			"w50;w25"
+alias	"w76"			"w50;w26"
+alias	"w77"			"w50;w27"
+alias	"w78"			"w50;w28"
+alias	"w79"			"w50;w29"
+alias	"w80"			"w50;w30"
+alias	"w81"			"w50;w31"
+alias	"w82"			"w50;w32"
+alias	"w83"			"w50;w33"
+alias	"w84"			"w50;w34"
+alias	"w85"			"w50;w35"
+alias	"w86"			"w50;w36"
+alias	"w87"			"w50;w37"
+alias	"w88"			"w50;w38"
+alias	"w89"			"w50;w39"
+alias	"w90"			"w50;w40"
+alias	"w91"			"w50;w41"
+alias	"w92"			"w50;w42"
+alias	"w93"			"w50;w43"
+alias	"w94"			"w50;w44"
+alias	"w95"			"w50;w45"
+alias	"w96"			"w50;w46"
+alias	"w97"			"w50;w47"
+alias	"w98"			"w50;w48"
+alias	"w99"			"w50;w49"
+alias	"w100"			"w50;w50"
+alias 	"w200" 			"w100;w100"
+alias 	"w300" 			"w200;w100"
+alias 	"w400" 			"w200;w200"
+alias 	"w500" 			"w400;w100"
+alias	"w600"			"w300;w300"
+alias	"w700"			"w600;w100"
+alias	"w800"			"w400;w400"
+alias	"w900"			"w700;w200"
+alias	"w1000"			"w500;w500"</p>
+	<a href="https://drive.google.com/file/d/1hYOPwmSw0yNV3a_YMdAKR6T4QYUn7fr_/view?pli=1">ссылка на мой конфиг</a>
+	</main>
+	</body>
+	

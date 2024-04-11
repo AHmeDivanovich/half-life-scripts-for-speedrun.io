@@ -1,0 +1,23 @@
+main{
+	width: 900px;
+	font-size: 35px;
+	margin: auto;
+	text-align: center;
+	color: white;
+	
+
+}
+p{
+	padding: 0 50px;
+	text-align: justify;
+}
+body{
+	background-color: DarkSlateGray;
+	background-image: url("фон2.jpg");
+}
+a{
+	width: 900px;
+}
+h2{
+	color: Gold;
+}
