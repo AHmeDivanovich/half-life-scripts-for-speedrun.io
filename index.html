@@ -18,17 +18,17 @@
 
 		Важно знать, что этот скрипт обеспечивает плавное прыжки кроликом только при определенных значениях fps_max, потому что при некоторых частотах кадров время, которое игрок проводит в воздухе, может привести к тому, что игрок приземлится на землю, пока скрипт выполняет -прыжок. Дополнительную информацию по этой теме можно найти на странице «Эффекты FPS».!</p>
 		<p>alias bh1 "+jump;alias bh@ bh2;special"</p>
-		<p></p>alias bh2 "wait;alias bh@ bh3;special"</p>
+		<p>alias bh2 "wait;alias bh@ bh3;special"</p>
 		<p>alias bh3 "-jump;alias bh@ bh4;special"</p>
-		<p></p>alias bh4 "wait;alias bh@ bh1;special"</p>
-		<p></p>alias +bhop "alias _special bh@;bh1"</p>
-		<p></p>alias -bhop "alias _special;-jump"</p>
-		<p></p>bind SPACE +bhop</p>
+		<p>alias bh4 "wait;alias bh@ bh1;special"</p>
+		<p>alias +bhop "alias _special bh@;bh1"</p>
+		<p>alias -bhop "alias _special;-jump"</p>
+		<p>bind SPACE +bhop</p>
 
 				<h2>Duckroll script</h2>
 		<p>!Скрипт, который делает непрерывные двойные прыжки (небольшие псевдопрыжки, которые поднимают вас в воздухе примерно на 32 единицы) чрезвычайно быстро. В основном он используется для контроля скорости при движении на очень высокой скорости и для поддержания скорости при движении по направлению к лестнице. Его также можно использовать для поддержания скорости при игре в версию Half-Life, в которой скорость Bunnyhopping ограничена из-за того, что ограничитель скорости Bunnyhop вообще не обнаруживает даблдаки. См. duck!</p>
 	<p>alias +duckroll "alias _special duckroll;duckroll"</p>
-	<p></p>alias -duckroll "alias _special"</p>
+	<p>alias -duckroll "alias _special"</p>
 	<p>alias duckroll "+duck;wait;-duck;wait;special"</p>
 		
 				<h2>Double-Duck script</h2>
@@ -39,7 +39,7 @@
 
 	Используйте bind <key> +dd</p>
 		<p>alias +dd "-duck;wait;+duck;wait;-duck;wait;+duck"</p>
-	<p></p>alias -dd -duck</p>
+	<p>alias -dd -duck</p>
 
 				<h2>Jumpbug script</h2>
 										<video width="320" height="240" controls>
@@ -51,8 +51,8 @@
 	Используйте bind <key> + jumpbug</p>
 		<p>alias _jumpbug</p>
 	<p>alias _jumpbugfunc "-duck;+jump;w5;-jump"</p>
-	<p></p>alias +jumpbug "+duck; alias _jumpbug _jumpbugfunc"</p>
-	<p></p>alias -jumpbug "_jumpbug; alias _jumpbug"</p>
+	<p>alias +jumpbug "+duck; alias _jumpbug _jumpbugfunc"</p>
+	<p>alias -jumpbug "_jumpbug; alias _jumpbug"</p>
 
 				<h2>Usespam script</h2>
 										<video width="320" height="240" controls>
@@ -62,7 +62,7 @@
 
 	Используйте bind <ключ> +usespam</p>
 		<p>alias +usespam "alias _special usespam;usespam"</p>
-	<p></p>alias -usespam "alias _special"</p>
+	<p>alias -usespam "alias _special"</p>
 	<p>alias usespam "+use;wait;-use;wait;special"</p>
 				<h2>Quick-Use script</h2>
 	<p>Простой скрипт, выполняющий +use в один кадр, не замедляющий вашу скорость, идеально подходящий для нажатия кнопок, когда вы прыгаете рядом с ними.
@@ -88,7 +88,7 @@
 
 	Используйте bind <key> obbo</p>
 		<p>alias obbo2000 "+use;w11;-use;+jump;w;-jump"
-	<p></p>alias obbo1500 "+use;w10;-use;+jump;w;-jump"</p>
+	<p>alias obbo1500 "+use;w10;-use;+jump;w;-jump"</p>
 	<p>alias obbo1300 "+use;w9;-use;+jump;w;-jump"</p>
 	<p>alias obbo1000 "+use;w8;-use;+jump;w;-jump"</p>
 	<p>alias obbo800 "+use;w7;-use;+jump;w;-jump"</p>
@@ -99,7 +99,7 @@
 
 Если вы не используете Bunnymod XT, следующая таблица ожидания может быть плохой заменой w. Эта таблица псевдонимов генерирует в общей сложности 110 псевдонимов ожидания, что отлично подходит для простого создания сложных сценариев.</p>
 	<p>//wait table
-<p></p>alias	"w"			"wait"</p>
+<p>alias	"w"			"wait"</p>
 <p>alias	"w1"			"wait"</p>
 <p>alias	"w2"			"w;w"</p>
 <p>alias	"w3"			"w2;w"</p>
